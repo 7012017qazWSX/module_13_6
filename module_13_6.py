@@ -48,7 +48,7 @@ class UserState(StatesGroup):
     weight = State()
 
 
-@dp.message_handler(text='calories')
+@dp.callback_query_handler(text='calories')
 async def set_age(message):
     await message.answer('Введите свой возраст:')
     await UserState.age.set()
